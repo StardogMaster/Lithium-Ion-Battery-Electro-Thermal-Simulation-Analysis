@@ -1,0 +1,11 @@
+# 1. Run 2nd-order RC electro-thermal simulation
+python battery_thermal_rc_model.py
+
+# 2. Calibrate with NASA battery data
+python nasa_calibration_seaborn.py
+
+# 3. Analyze nonlinear power demand
+python power_nonlinearity_analysis.py
+
+# 4. Run runtime sensitivity analysis
+python sensitivity_analysis.py
