@@ -12,26 +12,33 @@ This project focuses on simulating and analyzing lithium-ion battery behavior un
 
 
 ## Project Structure
-projection
-├── Source Codes
-│   ├── battery_thermal_rc_model.py      # 二阶RC电热耦合电池模型：仿真放电过程的电压、温度、电流
-│   ├── electrothermal_coupling.py       # 简化版电热耦合模型：验证“电流-温度-内阻”耦合关系
-│   ├── nasa_metadata_cleaning.py        # NASA电池数据集清洗与预处理
-│   ├── nasa_calibration_seaborn.py      # NASA数据校准：容量衰减+阻抗增长拟合
-│   ├── parameter_estimation.py          # 电池模型参数估计（RC网络、老化系数等）
-│   ├── power_nonlinearity_analysis.py   # 功率非线性分析：“电压下降→电流激增”的死亡螺旋效应
-│   ├── sensitivity_analysis.py          # 运行时间敏感性分析：功率/温度/老化对续航的影响
-│   └── cross_validation.py              # 模型交叉验证：验证仿真结果的可靠性
-├── Data Files
-│   ├── metadata.csv                     # NASA B0005电池测试数据：容量、阻抗等老化指标
-│   ├── user_behavior_dataset.csv        # 手机用户行为数据：屏幕时长、电池消耗等
-│   ├── RedmiK70pro.csv                  # Redmi K70 Pro使用实验数据
-│   ├── data.csv                         # 补充性电池测试数据
-│   └── Mobiles Dataset(2025).csv        # 2025年多机型手机电池数据集
-└── Output Figures
-    ├── Fig1_Voltage.png                 # 新旧电池端电压对比曲线
-    ├── Fig2_Temperature.png             # 电池放电过程温度变化曲线
-    ├── Fig3_Current.png                 # 放电电流变化+雪崩效应标注
-    ├── nasa_calibration_seaborn.png     # NASA数据校准后的容量/阻抗曲线
-    ├── parameter_identification_seaborn.png  # 参数估计结果图
-    └── power_nonlinearity_analysis.png  # 功率非线性的电流激增曲线
+projection/
+├── Source Codes/
+│   ├── battery_thermal_rc_model.py          # 2nd-order RC electro-thermal coupling battery model: Simulate voltage, temperature and current during discharge
+│   ├── electrothermal_coupling.py           # Simplified electro-thermal coupling model: Verify the coupling relationship of current-temperature-internal resistance
+│   ├── nasa_metadata_cleaning.py            # NASA battery dataset processing: Data cleaning and preprocessing for aging indicators
+│   ├── nasa_calibration_seaborn.py          # NASA data calibration: Fitting for battery capacity decay and impedance growth
+│   ├── parameter_estimation.py              # Battery model parameter identification: Estimate RC network and aging coefficient parameters
+│   ├── power_nonlinearity_analysis.py       # Power nonlinearity analysis: Verify the "voltage drop → current surge" death spiral effect
+│   ├── sensitivity_analysis.py              # Runtime sensitivity analysis: Analyze power/temperature/aging impact on battery life
+│   └── cross_validation.py                  # Model cross-validation: Verify the reliability of simulation results
+├── Data Files/
+│   ├── metadata.csv                         # NASA B0005 battery test data: Capacity, impedance and other aging indicators
+│   ├── user_behavior_dataset.csv            # Mobile phone user behavior data: Screen-on time, daily battery drain, etc.
+│   ├── RedmiK70pro.csv                      # Redmi K70 Pro battery experimental data: Physical parameters and test results
+│   ├── data3.csv                            # Supplementary battery test data: Auxiliary calibration and verification
+│   └── Mobiles Dataset(2025).csv            # 2025 multi-model mobile phone battery dataset: Cross-device performance comparison
+└── Output Figures/
+    ├── Fig1_Voltage.png                     # Voltage comparison curve: New battery vs aged battery terminal voltage
+    ├── Fig2_Temperature.png                 # Temperature evolution curve: Battery temperature change during discharge
+    ├── Fig3_Current.png                     # Discharge current curve: With avalanche effect annotation
+    ├── nasa_calibration_seaborn.png         # NASA calibration result: Fitted capacity decay and impedance growth curve
+    ├── parameter_identification_seaborn.png # Parameter estimation chart: Fitting result of RC model parameters
+    └── power_nonlinearity_analysis.png      # Nonlinear analysis chart: Voltage-dependent current surge curve
+
+##Data Description
+File Name	                                            Description
+metadata.csv	            NASA B0005 battery test data (capacity, impedance, cycle number)
+user_behavior_dataset.csv	Mobile user behavior data (screen-on time, battery drain per day)
+RedmiK70pro.csv	            Experimental Use of Redmi K70 Pro
+Mobiles Dataset(2025).csv	2025 multi-model mobile battery dataset (for cross-device comparison)
