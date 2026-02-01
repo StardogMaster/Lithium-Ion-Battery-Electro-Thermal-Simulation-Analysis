@@ -14,8 +14,8 @@ This project focuses on simulating and analyzing lithium-ion battery behavior un
 ## Project Structure
 projection/
 ├── Source Codes/
-│   ├── battery_thermal_rc_model.py          # 2nd-order RC electro-thermal coupling battery model: Simulate voltage, temperature and current during discharge/n
-│   ├── electrothermal_coupling.py           # Simplified electro-thermal coupling model: Verify the coupling relationship of current-temperature-internal resistance/n
+│   ├── battery_thermal_rc_model.py          # 2nd-order RC electro-thermal coupling battery model: Simulate voltage, temperature and current during discharge
+│   ├── electrothermal_coupling.py           # Simplified electro-thermal coupling model: Verify the coupling relationship of current-temperature-internal resistance
 │   ├── nasa_metadata_cleaning.py            # NASA battery dataset processing: Data cleaning and preprocessing for aging indicators
 │   ├── nasa_calibration_seaborn.py          # NASA data calibration: Fitting for battery capacity decay and impedance growth
 │   ├── parameter_estimation.py              # Battery model parameter identification: Estimate RC network and aging coefficient parameters
